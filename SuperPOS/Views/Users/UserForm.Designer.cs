@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             this.dataGridViewMain = new System.Windows.Forms.DataGridView();
-            this.iconButtonAdd = new FontAwesome.Sharp.IconButton();
-            this.panelSearch = new System.Windows.Forms.Panel();
-            this.textBoxUsername = new System.Windows.Forms.TextBox();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButtonPrint = new FontAwesome.Sharp.IconButton();
-            this.iconButtonDownload = new FontAwesome.Sharp.IconButton();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmailAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsAdmin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.iconButtonAdd = new FontAwesome.Sharp.IconButton();
+            this.panelSearch = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.iconButtonPrint = new FontAwesome.Sharp.IconButton();
+            this.iconButtonDownload = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.panelSearch.SuspendLayout();
             this.SuspendLayout();
@@ -57,11 +58,54 @@
             this.FirstName,
             this.LastName,
             this.EmailAddress,
+            this.Phone,
             this.IsAdmin});
             this.dataGridViewMain.Location = new System.Drawing.Point(12, 58);
             this.dataGridViewMain.Name = "dataGridViewMain";
             this.dataGridViewMain.Size = new System.Drawing.Size(776, 380);
             this.dataGridViewMain.TabIndex = 0;
+            this.dataGridViewMain.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMain_CellClick);
+            this.dataGridViewMain.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridViewMain_CellPainting);
+            // 
+            // No
+            // 
+            this.No.HeaderText = "No";
+            this.No.Name = "No";
+            this.No.Width = 50;
+            // 
+            // Username
+            // 
+            this.Username.HeaderText = "Username";
+            this.Username.Name = "Username";
+            // 
+            // FirstName
+            // 
+            this.FirstName.HeaderText = "First Name";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.Width = 150;
+            // 
+            // LastName
+            // 
+            this.LastName.HeaderText = "Last Name";
+            this.LastName.Name = "LastName";
+            this.LastName.Width = 150;
+            // 
+            // EmailAddress
+            // 
+            this.EmailAddress.HeaderText = "Email Address";
+            this.EmailAddress.Name = "EmailAddress";
+            this.EmailAddress.Width = 150;
+            // 
+            // Phone
+            // 
+            this.Phone.HeaderText = "Phone";
+            this.Phone.Name = "Phone";
+            // 
+            // IsAdmin
+            // 
+            this.IsAdmin.HeaderText = "Is Admin?";
+            this.IsAdmin.Name = "IsAdmin";
+            this.IsAdmin.Width = 75;
             // 
             // iconButtonAdd
             // 
@@ -82,6 +126,7 @@
             this.iconButtonAdd.Text = "New";
             this.iconButtonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonAdd.UseVisualStyleBackColor = false;
+            this.iconButtonAdd.Click += new System.EventHandler(this.iconButtonAdd_Click);
             // 
             // panelSearch
             // 
@@ -93,16 +138,6 @@
             this.panelSearch.Name = "panelSearch";
             this.panelSearch.Size = new System.Drawing.Size(300, 40);
             this.panelSearch.TabIndex = 2;
-            // 
-            // textBoxUsername
-            // 
-            this.textBoxUsername.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsername.Location = new System.Drawing.Point(46, 6);
-            this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(245, 28);
-            this.textBoxUsername.TabIndex = 7;
             // 
             // iconButton1
             // 
@@ -118,6 +153,16 @@
             this.iconButton1.Size = new System.Drawing.Size(40, 40);
             this.iconButton1.TabIndex = 8;
             this.iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // textBoxUsername
+            // 
+            this.textBoxUsername.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUsername.Location = new System.Drawing.Point(46, 6);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(245, 28);
+            this.textBoxUsername.TabIndex = 7;
             // 
             // iconButtonPrint
             // 
@@ -149,41 +194,6 @@
             this.iconButtonDownload.TabIndex = 10;
             this.iconButtonDownload.UseVisualStyleBackColor = true;
             // 
-            // No
-            // 
-            this.No.HeaderText = "No";
-            this.No.Name = "No";
-            this.No.Width = 50;
-            // 
-            // Username
-            // 
-            this.Username.HeaderText = "Username";
-            this.Username.Name = "Username";
-            // 
-            // FirstName
-            // 
-            this.FirstName.HeaderText = "First Name";
-            this.FirstName.Name = "FirstName";
-            this.FirstName.Width = 150;
-            // 
-            // LastName
-            // 
-            this.LastName.HeaderText = "Last Name";
-            this.LastName.Name = "LastName";
-            this.LastName.Width = 150;
-            // 
-            // EmailAddress
-            // 
-            this.EmailAddress.HeaderText = "Email Address";
-            this.EmailAddress.Name = "EmailAddress";
-            this.EmailAddress.Width = 150;
-            // 
-            // IsAdmin
-            // 
-            this.IsAdmin.HeaderText = "Is Admin?";
-            this.IsAdmin.Name = "IsAdmin";
-            this.IsAdmin.Width = 75;
-            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,6 +206,7 @@
             this.Controls.Add(this.dataGridViewMain);
             this.Name = "UserForm";
             this.Text = "UserForm";
+            this.Load += new System.EventHandler(this.UserForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
             this.panelSearch.ResumeLayout(false);
             this.panelSearch.PerformLayout();
@@ -217,6 +228,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmailAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsAdmin;
     }
 }
