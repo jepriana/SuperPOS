@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SuperPOS.Views
+namespace SuperPOS.Views.Commons
 {
-    public partial class LoginForm : Form
+    public partial class PrintForm : Form
     {
-        public LoginForm()
+        public PrintForm()
         {
             InitializeComponent();
         }

@@ -3,7 +3,7 @@ using SuperPOS.Views.Users;
 using System;
 using System.Windows.Forms;
 
-namespace SuperPOS.Views
+namespace SuperPOS.Views.Commons
 {
     public partial class MainForm : Form
     {
@@ -87,6 +87,18 @@ namespace SuperPOS.Views
         private void iconButtonUsers_Click(object sender, EventArgs e)
         {
             OpenChildForm(new UserForm(), iconButtonUsers.Text, iconButtonUsers.IconChar);
+        }
+
+        private void iconButtonLogout_Click(object sender, EventArgs e)
+        {
+            Program.CurrentUser = null;
+            loginForm.Show();
+            Close();
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

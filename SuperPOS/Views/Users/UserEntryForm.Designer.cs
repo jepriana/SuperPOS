@@ -45,6 +45,8 @@
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.checkBoxIsAdmin = new System.Windows.Forms.CheckBox();
+            this.iconButtonShowHidePassword = new FontAwesome.Sharp.IconButton();
+            this.iconButtonShowAndHideRepeatPassword = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // label1
@@ -153,7 +155,7 @@
             this.iconButtonSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.iconButtonSave.Name = "iconButtonSave";
             this.iconButtonSave.Size = new System.Drawing.Size(340, 62);
-            this.iconButtonSave.TabIndex = 10;
+            this.iconButtonSave.TabIndex = 16;
             this.iconButtonSave.Text = "Save";
             this.iconButtonSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonSave.UseVisualStyleBackColor = false;
@@ -164,7 +166,8 @@
             this.textBoxRepeatPassword.Location = new System.Drawing.Point(26, 375);
             this.textBoxRepeatPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxRepeatPassword.Name = "textBoxRepeatPassword";
-            this.textBoxRepeatPassword.Size = new System.Drawing.Size(340, 26);
+            this.textBoxRepeatPassword.PasswordChar = '*';
+            this.textBoxRepeatPassword.Size = new System.Drawing.Size(307, 26);
             this.textBoxRepeatPassword.TabIndex = 14;
             // 
             // label6
@@ -182,7 +185,8 @@
             this.textBoxPassword.Location = new System.Drawing.Point(26, 319);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(340, 26);
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(307, 26);
             this.textBoxPassword.TabIndex = 12;
             // 
             // label7
@@ -205,11 +209,45 @@
             this.checkBoxIsAdmin.Text = "Is Admin?";
             this.checkBoxIsAdmin.UseVisualStyleBackColor = true;
             // 
+            // iconButtonShowHidePassword
+            // 
+            this.iconButtonShowHidePassword.BackColor = System.Drawing.SystemColors.Control;
+            this.iconButtonShowHidePassword.FlatAppearance.BorderSize = 0;
+            this.iconButtonShowHidePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonShowHidePassword.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.iconButtonShowHidePassword.IconColor = System.Drawing.Color.Black;
+            this.iconButtonShowHidePassword.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonShowHidePassword.IconSize = 24;
+            this.iconButtonShowHidePassword.Location = new System.Drawing.Point(340, 319);
+            this.iconButtonShowHidePassword.Name = "iconButtonShowHidePassword";
+            this.iconButtonShowHidePassword.Size = new System.Drawing.Size(26, 26);
+            this.iconButtonShowHidePassword.TabIndex = 17;
+            this.iconButtonShowHidePassword.UseVisualStyleBackColor = false;
+            this.iconButtonShowHidePassword.Click += new System.EventHandler(this.iconButtonShowHidePassword_Click);
+            // 
+            // iconButtonShowAndHideRepeatPassword
+            // 
+            this.iconButtonShowAndHideRepeatPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.iconButtonShowAndHideRepeatPassword.FlatAppearance.BorderSize = 0;
+            this.iconButtonShowAndHideRepeatPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonShowAndHideRepeatPassword.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.iconButtonShowAndHideRepeatPassword.IconColor = System.Drawing.Color.Black;
+            this.iconButtonShowAndHideRepeatPassword.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonShowAndHideRepeatPassword.IconSize = 24;
+            this.iconButtonShowAndHideRepeatPassword.Location = new System.Drawing.Point(340, 375);
+            this.iconButtonShowAndHideRepeatPassword.Name = "iconButtonShowAndHideRepeatPassword";
+            this.iconButtonShowAndHideRepeatPassword.Size = new System.Drawing.Size(26, 26);
+            this.iconButtonShowAndHideRepeatPassword.TabIndex = 18;
+            this.iconButtonShowAndHideRepeatPassword.UseVisualStyleBackColor = false;
+            this.iconButtonShowAndHideRepeatPassword.Click += new System.EventHandler(this.iconButtonShowAndHideRepeatPassword_Click);
+            // 
             // UserEntryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 532);
+            this.Controls.Add(this.iconButtonShowAndHideRepeatPassword);
+            this.Controls.Add(this.iconButtonShowHidePassword);
             this.Controls.Add(this.checkBoxIsAdmin);
             this.Controls.Add(this.textBoxRepeatPassword);
             this.Controls.Add(this.label6);
@@ -258,5 +296,7 @@
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox checkBoxIsAdmin;
+        private FontAwesome.Sharp.IconButton iconButtonShowHidePassword;
+        private FontAwesome.Sharp.IconButton iconButtonShowAndHideRepeatPassword;
     }
 }

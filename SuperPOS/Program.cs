@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using SuperPOS.Data;
+using SuperPOS.Models;
 using SuperPOS.Repositories.UserRepository;
-using SuperPOS.Views;
+using SuperPOS.Views.Commons;
 using System;
 using System.Data.Entity;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace SuperPOS
 {
@@ -38,7 +38,7 @@ namespace SuperPOS
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm(new LoginForm()));
+            Application.Run(new LoginForm());
         }
 
         private static void ConfigureServices(IServiceCollection services)
@@ -48,5 +48,7 @@ namespace SuperPOS
         }
 
         public static ServiceProvider ServiceProvider { get; private set; }
+
+        public static User CurrentUser { get; set; }
     }
 }

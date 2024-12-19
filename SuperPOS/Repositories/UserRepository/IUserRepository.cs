@@ -12,5 +12,6 @@ namespace SuperPOS.Repositories.UserRepository
         Task<User> GetAsync(int id);
         Task<IEnumerable<User>> GetAllAsync(string keyword = "");
         Task UpdateAsync(User updatedUser);
+        Task<User> GetByUsernameAsync(string username);
     }
 }

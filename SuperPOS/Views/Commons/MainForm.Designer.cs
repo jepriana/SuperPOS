@@ -1,4 +1,4 @@
-﻿namespace SuperPOS.Views
+﻿namespace SuperPOS.Views.Commons
 {
     partial class MainForm
     {
@@ -28,37 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.panelMasterData = new System.Windows.Forms.Panel();
-            this.panelTransaction = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelTop = new System.Windows.Forms.Panel();
-            this.panelMain = new System.Windows.Forms.Panel();
-            this.statusStripMain = new System.Windows.Forms.StatusStrip();
-            this.toolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.iconButtonLogout = new FontAwesome.Sharp.IconButton();
-            this.iconButtonTitle = new FontAwesome.Sharp.IconButton();
             this.iconButtonSetting = new FontAwesome.Sharp.IconButton();
+            this.panelMasterData = new System.Windows.Forms.Panel();
             this.iconButtonUsers = new FontAwesome.Sharp.IconButton();
             this.iconButtonMembers = new FontAwesome.Sharp.IconButton();
             this.iconButtonCategories = new FontAwesome.Sharp.IconButton();
             this.iconButtonProducts = new FontAwesome.Sharp.IconButton();
             this.iconButtonMasterData = new FontAwesome.Sharp.IconButton();
+            this.panelTransaction = new System.Windows.Forms.Panel();
             this.iconButtonReceiving = new FontAwesome.Sharp.IconButton();
             this.iconButtonSale = new FontAwesome.Sharp.IconButton();
             this.iconButtonTransaction = new FontAwesome.Sharp.IconButton();
             this.iconButtonHome = new FontAwesome.Sharp.IconButton();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelTop = new System.Windows.Forms.Panel();
+            this.iconButtonLogout = new FontAwesome.Sharp.IconButton();
+            this.iconButtonTitle = new FontAwesome.Sharp.IconButton();
+            this.panelMain = new System.Windows.Forms.Panel();
+            this.statusStripMain = new System.Windows.Forms.StatusStrip();
+            this.toolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panelLeft.SuspendLayout();
             this.panelMasterData.SuspendLayout();
             this.panelTransaction.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTop.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.statusStripMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLeft
@@ -76,135 +77,6 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(200, 601);
             this.panelLeft.TabIndex = 0;
-            // 
-            // panelMasterData
-            // 
-            this.panelMasterData.BackColor = System.Drawing.Color.DarkOrchid;
-            this.panelMasterData.Controls.Add(this.iconButtonUsers);
-            this.panelMasterData.Controls.Add(this.iconButtonMembers);
-            this.panelMasterData.Controls.Add(this.iconButtonCategories);
-            this.panelMasterData.Controls.Add(this.iconButtonProducts);
-            this.panelMasterData.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMasterData.Location = new System.Drawing.Point(0, 316);
-            this.panelMasterData.Name = "panelMasterData";
-            this.panelMasterData.Size = new System.Drawing.Size(200, 188);
-            this.panelMasterData.TabIndex = 5;
-            this.panelMasterData.Visible = false;
-            // 
-            // panelTransaction
-            // 
-            this.panelTransaction.BackColor = System.Drawing.Color.DarkOrchid;
-            this.panelTransaction.Controls.Add(this.iconButtonReceiving);
-            this.panelTransaction.Controls.Add(this.iconButtonSale);
-            this.panelTransaction.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTransaction.Location = new System.Drawing.Point(0, 168);
-            this.panelTransaction.Name = "panelTransaction";
-            this.panelTransaction.Size = new System.Drawing.Size(200, 100);
-            this.panelTransaction.TabIndex = 3;
-            this.panelTransaction.Visible = false;
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.Controls.Add(this.label1);
-            this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(200, 72);
-            this.panelLogo.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(68, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "SuperPOS";
-            // 
-            // panelTop
-            // 
-            this.panelTop.BackColor = System.Drawing.Color.DarkViolet;
-            this.panelTop.Controls.Add(this.iconButtonLogout);
-            this.panelTop.Controls.Add(this.iconButtonTitle);
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(200, 0);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(684, 64);
-            this.panelTop.TabIndex = 1;
-            // 
-            // panelMain
-            // 
-            this.panelMain.BackColor = System.Drawing.Color.MediumOrchid;
-            this.panelMain.Controls.Add(this.statusStripMain);
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(200, 64);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(684, 537);
-            this.panelMain.TabIndex = 2;
-            // 
-            // statusStripMain
-            // 
-            this.statusStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar,
-            this.toolStripStatusLabel1});
-            this.statusStripMain.Location = new System.Drawing.Point(0, 515);
-            this.statusStripMain.Name = "statusStripMain";
-            this.statusStripMain.Size = new System.Drawing.Size(684, 22);
-            this.statusStripMain.TabIndex = 0;
-            this.statusStripMain.Text = "statusStrip1";
-            // 
-            // toolStripProgressBar
-            // 
-            this.toolStripProgressBar.Name = "toolStripProgressBar";
-            this.toolStripProgressBar.Size = new System.Drawing.Size(100, 16);
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.Control;
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(106, 17);
-            this.toolStripStatusLabel1.Text = "User Active: CA224";
-            // 
-            // iconButtonLogout
-            // 
-            this.iconButtonLogout.Dock = System.Windows.Forms.DockStyle.Right;
-            this.iconButtonLogout.FlatAppearance.BorderSize = 0;
-            this.iconButtonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonLogout.ForeColor = System.Drawing.SystemColors.Control;
-            this.iconButtonLogout.IconChar = FontAwesome.Sharp.IconChar.SignOut;
-            this.iconButtonLogout.IconColor = System.Drawing.SystemColors.Control;
-            this.iconButtonLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonLogout.IconSize = 40;
-            this.iconButtonLogout.Location = new System.Drawing.Point(634, 0);
-            this.iconButtonLogout.Name = "iconButtonLogout";
-            this.iconButtonLogout.Size = new System.Drawing.Size(50, 64);
-            this.iconButtonLogout.TabIndex = 3;
-            this.iconButtonLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonLogout.UseVisualStyleBackColor = true;
-            // 
-            // iconButtonTitle
-            // 
-            this.iconButtonTitle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconButtonTitle.FlatAppearance.BorderSize = 0;
-            this.iconButtonTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonTitle.ForeColor = System.Drawing.SystemColors.Control;
-            this.iconButtonTitle.IconChar = FontAwesome.Sharp.IconChar.House;
-            this.iconButtonTitle.IconColor = System.Drawing.SystemColors.Control;
-            this.iconButtonTitle.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonTitle.IconSize = 40;
-            this.iconButtonTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonTitle.Location = new System.Drawing.Point(0, 0);
-            this.iconButtonTitle.Name = "iconButtonTitle";
-            this.iconButtonTitle.Size = new System.Drawing.Size(200, 64);
-            this.iconButtonTitle.TabIndex = 2;
-            this.iconButtonTitle.Text = "Home";
-            this.iconButtonTitle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonTitle.UseVisualStyleBackColor = true;
             // 
             // iconButtonSetting
             // 
@@ -225,6 +97,20 @@
             this.iconButtonSetting.Text = "Settings";
             this.iconButtonSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonSetting.UseVisualStyleBackColor = true;
+            // 
+            // panelMasterData
+            // 
+            this.panelMasterData.BackColor = System.Drawing.Color.DarkOrchid;
+            this.panelMasterData.Controls.Add(this.iconButtonUsers);
+            this.panelMasterData.Controls.Add(this.iconButtonMembers);
+            this.panelMasterData.Controls.Add(this.iconButtonCategories);
+            this.panelMasterData.Controls.Add(this.iconButtonProducts);
+            this.panelMasterData.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMasterData.Location = new System.Drawing.Point(0, 316);
+            this.panelMasterData.Name = "panelMasterData";
+            this.panelMasterData.Size = new System.Drawing.Size(200, 188);
+            this.panelMasterData.TabIndex = 5;
+            this.panelMasterData.Visible = false;
             // 
             // iconButtonUsers
             // 
@@ -332,6 +218,18 @@
             this.iconButtonMasterData.UseVisualStyleBackColor = true;
             this.iconButtonMasterData.Click += new System.EventHandler(this.iconButtonMasterData_Click);
             // 
+            // panelTransaction
+            // 
+            this.panelTransaction.BackColor = System.Drawing.Color.DarkOrchid;
+            this.panelTransaction.Controls.Add(this.iconButtonReceiving);
+            this.panelTransaction.Controls.Add(this.iconButtonSale);
+            this.panelTransaction.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTransaction.Location = new System.Drawing.Point(0, 168);
+            this.panelTransaction.Name = "panelTransaction";
+            this.panelTransaction.Size = new System.Drawing.Size(200, 100);
+            this.panelTransaction.TabIndex = 3;
+            this.panelTransaction.Visible = false;
+            // 
             // iconButtonReceiving
             // 
             this.iconButtonReceiving.Dock = System.Windows.Forms.DockStyle.Top;
@@ -416,6 +314,27 @@
             this.iconButtonHome.UseVisualStyleBackColor = true;
             this.iconButtonHome.Click += new System.EventHandler(this.iconButtonHome_Click);
             // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.label1);
+            this.panelLogo.Controls.Add(this.pictureBox1);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(200, 72);
+            this.panelLogo.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(68, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "SuperPOS";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SuperPOS.Properties.Resources.shopping_bag;
@@ -426,6 +345,89 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // panelTop
+            // 
+            this.panelTop.BackColor = System.Drawing.Color.DarkViolet;
+            this.panelTop.Controls.Add(this.iconButtonLogout);
+            this.panelTop.Controls.Add(this.iconButtonTitle);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTop.Location = new System.Drawing.Point(200, 0);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new System.Drawing.Size(684, 64);
+            this.panelTop.TabIndex = 1;
+            // 
+            // iconButtonLogout
+            // 
+            this.iconButtonLogout.Dock = System.Windows.Forms.DockStyle.Right;
+            this.iconButtonLogout.FlatAppearance.BorderSize = 0;
+            this.iconButtonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonLogout.ForeColor = System.Drawing.SystemColors.Control;
+            this.iconButtonLogout.IconChar = FontAwesome.Sharp.IconChar.SignOut;
+            this.iconButtonLogout.IconColor = System.Drawing.SystemColors.Control;
+            this.iconButtonLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonLogout.IconSize = 40;
+            this.iconButtonLogout.Location = new System.Drawing.Point(634, 0);
+            this.iconButtonLogout.Name = "iconButtonLogout";
+            this.iconButtonLogout.Size = new System.Drawing.Size(50, 64);
+            this.iconButtonLogout.TabIndex = 3;
+            this.iconButtonLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonLogout.UseVisualStyleBackColor = true;
+            this.iconButtonLogout.Click += new System.EventHandler(this.iconButtonLogout_Click);
+            // 
+            // iconButtonTitle
+            // 
+            this.iconButtonTitle.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconButtonTitle.FlatAppearance.BorderSize = 0;
+            this.iconButtonTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonTitle.ForeColor = System.Drawing.SystemColors.Control;
+            this.iconButtonTitle.IconChar = FontAwesome.Sharp.IconChar.House;
+            this.iconButtonTitle.IconColor = System.Drawing.SystemColors.Control;
+            this.iconButtonTitle.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonTitle.IconSize = 40;
+            this.iconButtonTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonTitle.Location = new System.Drawing.Point(0, 0);
+            this.iconButtonTitle.Name = "iconButtonTitle";
+            this.iconButtonTitle.Size = new System.Drawing.Size(200, 64);
+            this.iconButtonTitle.TabIndex = 2;
+            this.iconButtonTitle.Text = "Home";
+            this.iconButtonTitle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonTitle.UseVisualStyleBackColor = true;
+            // 
+            // panelMain
+            // 
+            this.panelMain.BackColor = System.Drawing.Color.MediumOrchid;
+            this.panelMain.Controls.Add(this.statusStripMain);
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(200, 64);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(684, 537);
+            this.panelMain.TabIndex = 2;
+            // 
+            // statusStripMain
+            // 
+            this.statusStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBar,
+            this.toolStripStatusLabel1});
+            this.statusStripMain.Location = new System.Drawing.Point(0, 515);
+            this.statusStripMain.Name = "statusStripMain";
+            this.statusStripMain.Size = new System.Drawing.Size(684, 22);
+            this.statusStripMain.TabIndex = 0;
+            this.statusStripMain.Text = "statusStrip1";
+            // 
+            // toolStripProgressBar
+            // 
+            this.toolStripProgressBar.Name = "toolStripProgressBar";
+            this.toolStripProgressBar.Size = new System.Drawing.Size(100, 16);
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(106, 17);
+            this.toolStripStatusLabel1.Text = "User Active: CA224";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,21 +436,23 @@
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelLeft);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.panelLeft.ResumeLayout(false);
             this.panelMasterData.ResumeLayout(false);
             this.panelTransaction.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTop.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.statusStripMain.ResumeLayout(false);
             this.statusStripMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

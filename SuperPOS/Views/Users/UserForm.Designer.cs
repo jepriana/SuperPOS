@@ -178,6 +178,7 @@
             this.iconButtonPrint.Size = new System.Drawing.Size(40, 40);
             this.iconButtonPrint.TabIndex = 9;
             this.iconButtonPrint.UseVisualStyleBackColor = true;
+            this.iconButtonPrint.Click += new System.EventHandler(this.iconButtonPrint_Click);
             // 
             // iconButtonDownload
             // 
@@ -193,6 +194,7 @@
             this.iconButtonDownload.Size = new System.Drawing.Size(40, 40);
             this.iconButtonDownload.TabIndex = 10;
             this.iconButtonDownload.UseVisualStyleBackColor = true;
+            this.iconButtonDownload.Click += new System.EventHandler(this.iconButtonDownload_Click);
             // 
             // UserForm
             // 

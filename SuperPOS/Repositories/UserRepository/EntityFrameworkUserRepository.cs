@@ -81,6 +81,19 @@ namespace SuperPOS.Repositories.UserRepository
             }
         }
 
+        public async Task<User> GetByUsernameAsync(string username)
+        {
+            try
+            {
+                return await _dbContext.Users
+                    .FirstOrDefaultAsync(u => u.Username == username);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task UpdateAsync(User updatedUser)
         {
             try

@@ -9,6 +9,8 @@ namespace SuperPOS.Views.Users
     {
         public User NewUser { get; private set; }
         public User UpdateUser { get; set; }
+        private bool isPasswordVisible = false;
+        private bool isRepeatPasswordVisible = false;
 
         public UserEntryForm()
         {
@@ -28,14 +30,14 @@ namespace SuperPOS.Views.Users
                     UpdateUser.Firstname = textBoxFirstname.Text;
                     UpdateUser.Lastname = textBoxLastname.Text;
                     UpdateUser.IsAdmin = checkBoxIsAdmin.Checked;
-                    if (string.IsNullOrEmpty(textBoxPassword.Text) && string.IsNullOrEmpty(textBoxRepeatPassword.Text) && textBoxPassword.Text.Equals(textBoxRepeatPassword.Text))
+                    if (!string.IsNullOrEmpty(textBoxPassword.Text) && !string.IsNullOrEmpty(textBoxRepeatPassword.Text) && textBoxPassword.Text.Equals(textBoxRepeatPassword.Text))
                     {
                         UpdateUser.Password = PasswordHelper.HashPassword(textBoxPassword.Text);
                     }
                 }
                 else
                 {
-                    if (!string.IsNullOrEmpty(textBoxPassword.Text) || !string.IsNullOrEmpty(textBoxRepeatPassword.Text) || !textBoxPassword.Text.Equals(textBoxRepeatPassword.Text))
+                    if (string.IsNullOrEmpty(textBoxPassword.Text) || string.IsNullOrEmpty(textBoxRepeatPassword.Text) || !textBoxPassword.Text.Equals(textBoxRepeatPassword.Text))
                     {
                         throw new Exception("Please enter valid password");
                     }
@@ -68,6 +70,36 @@ namespace SuperPOS.Views.Users
                 textBoxFirstname.Text = UpdateUser.Firstname;
                 textBoxLastname.Text = UpdateUser.Lastname;
                 checkBoxIsAdmin.Checked = UpdateUser.IsAdmin;
+            }
+        }
+
+        private void iconButtonShowHidePassword_Click(object sender, EventArgs e)
+        {
+            isPasswordVisible = !isPasswordVisible;
+            if (isPasswordVisible)
+            {
+                textBoxPassword.PasswordChar = '\0';
+                iconButtonShowHidePassword.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+            }
+            else
+            {
+                textBoxPassword.PasswordChar = '*';
+                iconButtonShowHidePassword.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            }
+        }
+
+        private void iconButtonShowAndHideRepeatPassword_Click(object sender, EventArgs e)
+        {
+            isRepeatPasswordVisible = !isRepeatPasswordVisible;
+            if (isRepeatPasswordVisible)
+            {
+                textBoxRepeatPassword.PasswordChar = '\0';
+                iconButtonShowAndHideRepeatPassword.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+            }
+            else
+            {
+                textBoxRepeatPassword.PasswordChar = '*';
+                iconButtonShowAndHideRepeatPassword.IconChar = FontAwesome.Sharp.IconChar.Eye;
             }
         }
     }

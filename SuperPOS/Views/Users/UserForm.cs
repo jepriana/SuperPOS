@@ -1,8 +1,12 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using OfficeOpenXml;
 using SuperPOS.Core.Helpers;
 using SuperPOS.Models;
 using SuperPOS.Repositories.UserRepository;
+using SuperPOS.Views.Commons;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -117,6 +121,74 @@ namespace SuperPOS.Views.Users
                     await LoadUserData();
                 }
             }
+        }
+
+        private void iconButtonDownload_Click(object sender, System.EventArgs e)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog()
+            {
+                Filter = "Excel Workbook|*.xlsx",
+                DefaultExt = ".xlsx",
+                Title = "Save Data"
+            })
+            {
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+                    using (ExcelPackage ep = new ExcelPackage())
+                    {
+                        ExcelWorksheet ws = ep.Workbook.Worksheets.Add("Users");
+                        // Add the headers
+                        for (int i = 0; i < dataGridViewMain.Columns.Count - 2; i++)
+                        {
+                            ws.Cells[1, i + 1].Value = dataGridViewMain.Columns[i].HeaderText;
+                        }
+
+                        // Add the data
+                        for (int i = 0; i < dataGridViewMain.Rows.Count; i++)
+                        {
+                            for (int j = 0; j < dataGridViewMain.Columns.Count - 2; j++)
+                            {
+                                ws.Cells[i + 2, j + 1].Value = dataGridViewMain.Rows[i].Cells[j].Value;
+                            }
+                        }
+
+                        // Save the file
+                        FileInfo fileInfo = new FileInfo(saveFileDialog.FileName);
+                        ep.SaveAs(fileInfo);
+                        MessageBox.Show($"Data berhasil disimpan pada lokasi {saveFileDialog.FileName}.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+        }
+
+        private void iconButtonPrint_Click(object sender, System.EventArgs e)
+        {
+            int rowNumber = 1;
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("No", typeof(string));
+            dt.Columns.Add("Username", typeof(string));
+            dt.Columns.Add("Firstname", typeof(string));
+            dt.Columns.Add("Lastname", typeof(string));
+            dt.Columns.Add("Email", typeof(string));
+            dt.Columns.Add("Phone", typeof(string));
+            dt.Columns.Add("IsAdmin", typeof(bool));
+
+            foreach (var user in _dataUsers)
+            {
+                dt.Rows.Add(rowNumber, user.Username, user.Firstname, user.Lastname, user.Email, user.Phone, user.IsAdmin);
+                rowNumber++;
+            }
+
+            ds.Tables.Add(dt);
+            ds.WriteXmlSchema("User.xml");
+            PrintForm printForm = new PrintForm();
+            UserCrystalReport userCrystalReport = new UserCrystalReport();
+            userCrystalReport.SetDataSource(ds);
+            printForm.crystalReportViewerMain.ReportSource = userCrystalReport;
+            printForm.crystalReportViewerMain.Refresh();
+            printForm.ShowDialog();
         }
     }
 }
